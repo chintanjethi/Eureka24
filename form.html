@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lithium-ion Battery Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            /* Add this line to create a gray border */
+        }
+
+        .header img {
+            height: 40px;
+        }
+
+        .header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .header ul li {
+            margin-left: 20px;
+        }
+
+        .header ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="assets/Footer-Logo-1.png" alt="Varroc Logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Battery Remaining Useful Life Prediction</h2>
+        <div class="form-group">
+            <label for="temperature">Temperature (in Celsius):</label>
+            <input type="number" id="temperature" name="temperature" required>
+        </div>
+        <div class="form-group">
+            <label for="voltage">Voltage (in volts):</label>
+            <input type="number" id="voltage" name="voltage" required>
+        </div>
+        <div class="form-group">
+            <label for="current">Current (in amperes):</label>
+            <input type="number" id="current" name="current" required>
+        </div>
+        <div class="form-group">
+            <label for="capacity">Capacity (in Ah):</label>
+            <input type="number" id="capacity" name="capacity" required>
+        </div>
+        <div class="form-group">
+            <label for="charge_cycles">Number of Charge Cycles:</label>
+            <input type="number" id="charge_cycles" name="charge_cycles" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age (in months):</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <button class="btn-submit" onclick="predict()">Predict Remaining Useful Life</button>
+        <div id="prediction-results"></div>
+    </div>
+
+    <script>
+        function predict() {
+            // Here you would make a call to your machine learning model to get the prediction results
+            // You can update the #prediction-results div with the predicted values
+            // Example:
+            var predictedCapacity = 50.25; // Example predicted capacity
+            var predictedCycles = 100; // Example predicted cycles
+
+            var predictionResults = document.getElementById("prediction-results");
+            predictionResults.innerHTML = "<h3>Prediction Results</h3>" +
+                "<p>Predicted Remaining Capacity: " + predictedCapacity.toFixed(2) + " Ah</p>" +
+                "<p>Predicted Remaining Cycles: " + predictedCycles + "</p>";
+        }
+    </script>
+
+
+</body>
+
+</html>
